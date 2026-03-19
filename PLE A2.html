@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Português Língua Estrangeira (PLE) Nível A2.">
+  <title>PLE A2</title>
+
+  <link rel="preconnect" href="https://rsms.me">
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #334155;
+      --primary: #2563eb;
+      --grammar-bg: #fef2f2;
+      --grammar-border: #ef4444;
+      --grammar-text: #991b1b;
+      --example-bg: #f0fdf4;
+      --example-border: #22c55e;
+      --example-text: #166534;
+      --card-radius: 16px;
+      --container-max: 900px;
+      --content-max-ch: 80ch;
+      --table-header-bg: #f1f5f9;
+      --table-hover-bg: #f8fafc;
+      --table-border: #e2e8f0;
+    }
+
+    /* Dark Mode Variables */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0f172a;
+        --surface: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #cbd5e1;
+        --primary: #3b82f6;
+        --grammar-bg: #450a0a;
+        --grammar-border: #ef4444;
+        --grammar-text: #fca5a5;
+        --example-bg: #052e16;
+        --example-border: #22c55e;
+        --example-text: #86efac;
+        --table-header-bg: #0f172a;
+        --table-hover-bg: #334155;
+        --table-border: #334155;
+      }
+    }
+
+    /* Reset & box sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus,
+    .skip-link:focus-visible {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    /* Body / typography */
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+      background: var(--bg-color);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      padding: 2rem 1rem;
+    }
+
+    main {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Sections */
+    section {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: var(--card-radius);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.2s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      line-height: 1.25;
+    }
+
+    h2::before {
+      content: "";
+      width: 8px;
+      height: 26px;
+      background: var(--primary);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+
+    /* Content styling */
+    p,
+    ul,
+    ol {
+      color: var(--text-muted);
+      max-width: var(--content-max-ch);
+    }
+
+    p {
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      margin-bottom: 1rem;
+    }
+
+    section ul,
+    section ol {
+      margin-left: 1.4rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Callout blocks */
+    .callout {
+      padding: 1rem 1.2rem;
+      border-left: 6px solid;
+      border-radius: 0 8px 8px 0;
+      margin: 1.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    .grammar {
+      background: var(--grammar-bg);
+      border-color: var(--grammar-border);
+      color: var(--grammar-text);
+    }
+
+    .example {
+      background: var(--example-bg);
+      border-color: var(--example-border);
+      color: var(--example-text);
+      font-style: italic;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--table-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      min-width: 480px;
+    }
+
+    th,
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--table-border);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th[scope="col"] {
+      background: var(--table-header-bg);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    tbody tr:hover {
+      background: var(--table-hover-bg);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .number {
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Focus accessibility */
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+      border-radius: 6px;
+    }
+
+    section > * + * {
+      margin-top: 0.6rem;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem 0.8rem;
+        font-size: 16px;
+      }
+      section {
+        padding: 1.4rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      table {
+        min-width: 380px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
+
+  <main id="main-content">
+    <section id="alfabeto" aria-labelledby="alfabeto-title">
+      <h2 id="alfabeto-title">1. Alfabeto Português</h2>
+      <p>O <strong>alfabeto português</strong> é composto por <strong>26 letras</strong>.</p>
+      
+      <div class="table-container" aria-labelledby="alfabeto-title">
+        <table aria-label="Tabela do alfabeto português">
+          <thead>
+            <tr>
+              <th scope="col">Letra</th>
+              <th scope="col">Pronúncia</th>
+              <th scope="col">Letra</th>
+              <th scope="col">Pronúncia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A</td><td>á</td><td>N</td><td>ene</td></tr>
+            <tr><td>B</td><td>bê</td><td>O</td><td>ó</td></tr>
+            <tr><td>C</td><td>cê</td><td>P</td><td>pê</td></tr>
+            <tr><td>D</td><td>dê</td><td>Q</td><td>quê</td></tr>
+            <tr><td>E</td><td>é</td><td>R</td><td>erre</td></tr>
+            <tr><td>F</td><td>efe</td><td>S</td><td>esse</td></tr>
+            <tr><td>G</td><td>gê</td><td>T</td><td>tê</td></tr>
+            <tr><td>H</td><td>agá</td><td>U</td><td>u</td></tr>
+            <tr><td>I</td><td>i</td><td>V</td><td>vê</td></tr>
+            <tr><td>J</td><td>jota</td><td>W</td><td>dáblio</td></tr>
+            <tr><td>K</td><td>cá</td><td>X</td><td>xis</td></tr>
+            <tr><td>L</td><td>ele</td><td>Y</td><td>ípsilon</td></tr>
+            <tr><td>M</td><td>eme</td><td>Z</td><td>zê</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout grammar" role="note" aria-label="Nota de gramática">
+        As letras <strong>K</strong>, <strong>W</strong> e <strong>Y</strong> aparecem sobretudo em <strong>palavras estrangeiras</strong> ou <strong>nomes próprios</strong>.<br>
+        As <strong>vogais</strong> em português são <strong>A</strong>, <strong>E</strong>, <strong>I</strong>, <strong>O</strong> e <strong>U</strong>, e podem ter sons <strong>abertos</strong>, <strong>fechados</strong> ou <strong>nasais</strong>.
+      </aside>
+    </section>
+
+    <section id="acentos" aria-labelledby="acentos-title">
+      <h2 id="acentos-title">2. Acentos Gráficos</h2>
+      <p>A língua portuguesa utiliza vários <strong>acentos gráficos</strong> para indicar a <strong>pronúncia correta</strong> das vogais.</p>
+
+      <ul>
+        <li><strong>Acento agudo</strong> (´) — indica <strong>som aberto</strong></li>
+        <li><strong>Acento grave</strong> (`) — usado na <strong>contração</strong> da preposição "a" com os artigos "a" ou "as"</li>
+        <li><strong>Acento circunflexo</strong> (^) — indica <strong>som fechado</strong></li>
+      </ul>
+
+      <aside class="callout grammar" role="note" aria-label="Nota sobre o til">
+        O <strong>til</strong> (~) não é tecnicamente um acento, mas um sinal diacrítico que indica <strong>nasalidade</strong>.
+      </aside>
+
+      <aside class="callout example" role="note" aria-label="Exemplos de acentuação">
+        Sábado — agudo.<br>
+        À escola — grave.<br>
+        Avô — circunflexo.<br>
+        Pão — til.
+      </aside>
+    </section>
+
+    <section id="classificacao-palavras" aria-labelledby="classificacao-title">
+      <h2 id="classificacao-title">3. Classificação das Palavras</h2>
+      <p>As palavras podem ser classificadas de acordo com a posição da <strong>sílaba tónica</strong>.</p>
+
+      <ul>
+        <li><strong>Agudas</strong> — acento na <strong>última</strong> sílaba</li>
+        <li><strong>Graves</strong> — acento na <strong>penúltima</strong> sílaba</li>
+        <li><strong>Esdrúxulas</strong> — acento na <strong>antepenúltima</strong> sílaba</li>
+      </ul>
+
+      <aside class="callout grammar" role="note" aria-label="Nota gramatical sobre esdrúxulas">
+        Todas as palavras esdrúxulas são <strong>sempre acentuadas</strong> graficamente.<br>
+        Em palavras graves (<strong>paroxítonas</strong>) sem acento, a sílaba tônica é <strong>sempre a penúltima</strong>.
+      </aside>
+
+      <aside class="callout example" role="note" aria-label="Exemplos de classificação">
+        Café — aguda.<br>
+        Fácil — grave.<br>
+        Lâmpada — esdrúxula.
+      </aside>
+    </section>
+
+    <section id="numeros" aria-labelledby="numeros-title">
+      <h2 id="numeros-title">4. Números</h2>
+      <p>Os numerais em português dividem-se em <strong>cardinais</strong> e <strong>ordinais</strong>.</p>
+
+      <h3 id="numeros-cardinais-title">Números cardinais</h3>
+      <div class="table-container" aria-labelledby="numeros-cardinais-title">
+        <table aria-label="Números cardinais em masculino e feminino">
+          <thead>
+            <tr>
+              <th scope="col">Número</th>
+              <th scope="col">Masculino</th>
+              <th scope="col">Feminino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="number">1</td><td>um</td><td>uma</td></tr>
+            <tr><td class="number">2</td><td>dois</td><td>duas</td></tr>
+            <tr><td class="number">3</td><td>três</td><td>três</td></tr>
+            <tr><td class="number">10</td><td>dez</td><td>dez</td></tr>
+            <tr><td class="number">20</td><td>vinte</td><td>vinte</td></tr>
+            <tr><td class="number">100</td><td>cem</td><td>cem</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout grammar" role="note" aria-label="Nota sobre cem e cento">
+        "<strong>Cem</strong>" significa exatamente 100.<br>
+        "<strong>Cento</strong>" é usado antes de outros números <strong>superiores</strong> a 100.
+      </aside>
+
+      <aside class="callout example" role="note" aria-label="Exemplos com cento">
+        Cento e um.<br>
+        Cento e vinte.
+      </aside>
+
+      <h3 id="numeros-ordinais-title">Números ordinais</h3>
+      <div class="table-container" aria-labelledby="numeros-ordinais-title">
+        <table aria-label="Números ordinais em masculino e feminino">
+          <thead>
+            <tr>
+              <th scope="col">Número</th>
+              <th scope="col">Masculino</th>
+              <th scope="col">Feminino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="number">1º</td><td>primeiro</td><td>primeira</td></tr>
+            <tr><td class="number">2º</td><td>segundo</td><td>segunda</td></tr>
+            <tr><td class="number">3º</td><td>terceiro</td><td>terceira</td></tr>
+            <tr><td class="number">10º</td><td>décimo</td><td>décima</td></tr>
+            <tr><td class="number">20º</td><td>vigésimo</td><td>vigésima</td></tr>
+            <tr><td class="number">100º</td><td>centésimo</td><td>centésima</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="horas" aria-labelledby="horas-title">
+      <h2 id="horas-title">5. Horas</h2>
+      <p>Para indicar as horas, usamos diferentes estruturas dependendo se a hora é <strong>singular</strong> ou <strong>plural</strong>.</p>
+
+      <aside class="callout grammar" role="note" aria-label="Nota sobre uso de é e são">
+        Usamos "<strong>É</strong>" com uma hora e "<strong>São</strong>" com as restantes horas.<br>
+        Os minutos acrescentam-se depois da hora, usando "<strong>e</strong>" seguido dos minutos.
+      </aside>
+
+      <h3>Partes do dia</h3>
+      <ul>
+        <li><strong>Madrugada</strong> — depois da meia-noite até ao amanhecer</li>
+        <li><strong>Manhã</strong> — do amanhecer até ao meio-dia</li>
+        <li><strong>Tarde</strong> — depois do almoço até ao pôr do sol</li>
+        <li><strong>Noite</strong> — depois do pôr do sol até à meia-noite</li>
+      </ul>
+
+      <aside class="callout example" role="note" aria-label="Exemplos de horas">
+        É uma da madrugada.<br>
+        São duas e dez.<br>
+        São sete e meia da manhã.<br>
+        São cinco menos um quarto da tarde.<br>
+        São dez da noite.
+      </aside>
+    </section>
+
+    <section id="estrutura-frase" aria-labelledby="estrutura-title">
+      <h2 id="estrutura-title">6. Estrutura da Frase</h2>
+
+      <p>Em português, a estrutura básica da frase é formada por <strong>sujeito</strong>, <strong>verbo</strong> e <strong>complemento</strong>.</p>
+      
+      <aside class="callout example" role="note" aria-label="Exemplos de estrutura básica">
+        Eu estudo português.<br>
+        Ela compra pão.<br>
+        Nós estamos na escola.
+      </aside>
+
+      <h3 id="artigos-title">Artigos</h3>
+      <aside class="callout grammar" role="note">
+        Os artigos concordam em <strong>género</strong> e <strong>número</strong> com o substantivo e podem ser <strong>definidos</strong> ou <strong>indefinidos</strong>.
+      </aside>
+      
+      <div class="table-container" aria-labelledby="artigos-title">
+        <table aria-label="Artigos definidos e indefinidos em português">
+          <thead>
+            <tr>
+              <th scope="col">Tipo</th>
+              <th scope="col">Masculino</th>
+              <th scope="col">Feminino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Definido</td><td>o / os</td><td>a / as</td></tr>
+            <tr><td>Indefinido</td><td>um / uns</td><td>uma / umas</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout example" role="note">
+        O carro.<br>
+        As casas.<br>
+        Uma mesa.<br>
+        Uns livros.
+      </aside>
+
+      <h3>Adjetivos</h3>
+      <aside class="callout grammar" role="note">
+        Os adjetivos descrevem um substantivo e normalmente aparecem <strong>depois</strong> dele.
+      </aside>  
+      
+      <aside class="callout example" role="note" aria-label="Exemplos de adjetivos">
+        Carro novo.<br>
+        Casa grande.<br>
+        Livro interessante.
+      </aside>
+
+      <h3>Advérbios</h3>
+      <aside class="callout grammar" role="note">
+        Os advérbios modificam verbos, adjetivos ou outros advérbios e normalmente <strong>não mudam</strong> de forma.
+      </aside>  
+      
+      <aside class="callout example" role="note" aria-label="Exemplos de advérbios">
+        Eu estudo muito.<br>
+        Ele fala bem português.<br>
+        Ela está muito cansada.
+      </aside>
+    </section>
+
+    <section id="verbos-ser-estar-ter" aria-labelledby="verbos-title">
+      <h2 id="verbos-title">7. Verbos ser, estar e ter</h2>
+      <p>Os verbos <strong>ser</strong>, <strong>estar</strong> e <strong>ter</strong> são fundamentais em português.</p>
+
+      <h3>Verbo ser</h3>
+      <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ser">
+        O verbo ser descreve características <strong>permanentes</strong> ou essenciais.<br>
+        Utiliza-se "<strong>ser de</strong>" com as contrações do, da, dos e das.
+      </aside>
+
+      <ul>
+        <li><strong>Origem</strong></li>
+        <li><strong>Pertença</strong></li>
+        <li><strong>Material</strong></li>
+        <li><strong>Profissão</strong></li>
+        <li><strong>Estado civil</strong></li>
+      </ul>
+
+      <aside class="callout example" role="note" aria-label="Exemplos com ser">
+        Sou de Portugal.<br>
+        O carro é da Susana.<br>
+        O copo é de vidro.<br>
+        Ela é médica.<br>
+        Eu sou casado.
+      </aside>
+
+      <h3>Verbo estar</h3>
+      <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo estar">
+        O verbo estar descreve características <strong>temporárias</strong>.<br>
+        Utiliza-se "<strong>estar com</strong>" para indicar sensações físicas ou emoções.
+      </aside>
+
+      <ul>
+        <li><strong>Estado passageiro</strong></li>
+        <li><strong>Localização atual</strong></li>
+        <li><strong>Condições momentâneas</strong></li>
+      </ul>
+
+      <aside class="callout example" role="note" aria-label="Exemplos com estar">
+        Eu estou doente.<br>
+        Eles estão no supermercado.<br>
+        Está calor hoje.<br>
+        Estou com frio.<br>
+        Nós estamos com medo.
+      </aside>
+
+      <h3>Verbo ter</h3>
+      <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ter">
+        O verbo ter indica <strong>posse</strong>, <strong>idade</strong> ou estados físicos.<br>
+        Utiliza-se "<strong>ter que</strong>" ou "<strong>ter de</strong>" para indicar obrigação ou necessidade.
+      </aside>
+
+      <aside class="callout example" role="note" aria-label="Exemplos com ter">
+        Tenho 28 anos.<br>
+        Ela tem um carro.<br>
+        Nós temos fome.<br>
+        Tenho que estudar.<br>
+        Eles têm de comprar comida.
+      </aside>
+
+      <h3 id="conjugacao-title">Conjugação no presente do indicativo</h3>
+      <div class="table-container" aria-labelledby="conjugacao-title"> 
+        <table aria-label="Conjugação dos verbos ser, estar e ter no presente do indicativo">
+          <thead>
+            <tr>
+              <th scope="col">Pessoa</th>
+              <th scope="col">SER</th>
+              <th scope="col">ESTAR</th>
+              <th scope="col">TER</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Eu</td><td>sou</td><td>estou</td><td>tenho</td></tr>
+            <tr><td>Tu</td><td>és</td><td>estás</td><td>tens</td></tr>
+            <tr><td>Ele / Ela / Você</td><td>é</td><td>está</td><td>tem</td></tr>
+            <tr><td>Nós</td><td>somos</td><td>estamos</td><td>temos</td></tr>
+            <tr><td>Eles / Elas / Vocês</td><td>são</td><td>estão</td><td>têm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="verbos-regulares" aria-labelledby="verbos-regulares-title">
+      <h2 id="verbos-regulares-title">8. Verbos Regulares</h2>
+
+      <p>Os verbos regulares em português dividem-se em três grupos, que são <strong>AR</strong>, <strong>ER</strong> e <strong>IR</strong>.</p>
+
+      <aside class="callout grammar" role="note">
+        <strong>No presente do indicativo</strong>, retiram-se <strong>AR</strong>, <strong>ER</strong> ou <strong>IR</strong> e acrescentam-se as terminações ao radical.
+      </aside>
+
+      <h3 id="verbos-ar-title">Verbos em AR</h3>
+      <div class="table-container" aria-labelledby="verbos-ar-title">
+        <table aria-label="Conjugação de verbos terminados em AR">
+          <thead>
+            <tr>
+              <th scope="col">Pessoa</th>
+              <th scope="col">Terminação</th>
+              <th scope="col">Falar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Eu</td><td>o</td><td>falo</td></tr>
+            <tr><td>Tu</td><td>as</td><td>falas</td></tr>
+            <tr><td>Ele / Ela / Você</td><td>a</td><td>fala</td></tr>
+            <tr><td>Nós</td><td>amos</td><td>falamos</td></tr>
+            <tr><td>Eles / Elas / Vocês</td><td>am</td><td>falam</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout example" role="note">
+        Eu falo português.<br>
+        Tu falas muito rápido.
+      </aside>
+
+      <h3 id="verbos-er-title">Verbos em ER</h3>
+      <div class="table-container" aria-labelledby="verbos-er-title">
+        <table aria-label="Conjugação de verbos terminados em ER">
+          <thead>
+            <tr>
+              <th scope="col">Pessoa</th>
+              <th scope="col">Terminação</th>
+              <th scope="col">Comer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Eu</td><td>o</td><td>como</td></tr>
+            <tr><td>Tu</td><td>es</td><td>comes</td></tr>
+            <tr><td>Ele / Ela / Você</td><td>e</td><td>come</td></tr>
+            <tr><td>Nós</td><td>emos</td><td>comemos</td></tr>
+            <tr><td>Eles / Elas / Vocês</td><td>em</td><td>comem</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout example" role="note">
+        Eu como pão.<br>
+        Eles comem ao meio-dia.
+      </aside>
+
+      <h3 id="verbos-ir-title">Verbos em IR</h3>
+      <div class="table-container" aria-labelledby="verbos-ir-title">
+        <table aria-label="Conjugação de verbos terminados em IR">
+          <thead>
+            <tr>
+              <th scope="col">Pessoa</th>
+              <th scope="col">Terminação</th>
+              <th scope="col">Abrir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Eu</td><td>o</td><td>abro</td></tr>
+            <tr><td>Tu</td><td>es</td><td>abres</td></tr>
+            <tr><td>Ele / Ela / Você</td><td>e</td><td>abre</td></tr>
+            <tr><td>Nós</td><td>imos</td><td>abrimos</td></tr>
+            <tr><td>Eles / Elas / Vocês</td><td>em</td><td>abrem</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout example" role="note">
+        Eu abro a porta.<br>
+        Nós abrimos a loja.
+      </aside>
+
+    </section>
+    
+    <section id="contracoes-preposicoes" aria-labelledby="contracoes-title">
+      <h2 id="contracoes-title">9. Contrações de Preposições</h2>
+
+      <p>Algumas preposições <strong>contraem-se</strong> com artigos e pronomes em português.</p>
+
+      <h3 id="contracoes-artigos-title">Contrações de preposições com artigos</h3>
+      <div class="table-container" aria-labelledby="contracoes-artigos-title">
+        <table aria-label="Contrações de preposições com artigos">
+          <thead>
+            <tr>
+              <th scope="col">Preposição</th>
+              <th scope="col">+ o</th>
+              <th scope="col">+ a</th>
+              <th scope="col">+ os</th>
+              <th scope="col">+ as</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>de</td><td>do</td><td>da</td><td>dos</td><td>das</td></tr>
+            <tr><td>em</td><td>no</td><td>na</td><td>nos</td><td>nas</td></tr>
+            <tr><td>a</td><td>ao</td><td>à</td><td>aos</td><td>às</td></tr>
+            <tr><td>por</td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <aside class="callout example" role="note" aria-label="Exemplos de contrações">
+        Eu sou do Brasil.<br>
+        Nós estamos na escola.<br>
+        Cheguei às oito horas.<br>
+        Caminhamos pelo parque.
+      </aside>
+
+      <h3 id="contracoes-pronomes-title">Contrações de preposições com pronomes</h3>
+      
+      <aside class="callout grammar" role="note">
+        Combinações como "<strong>a ele</strong>" e "<strong>por ele</strong>" <strong>não sofrem alteração</strong> na escrita.
+      </aside>
+
+      <div class="table-container" aria-labelledby="contracoes-pronomes-title">
+        <table aria-label="Contrações de preposições com pronomes">
+          <thead>
+            <tr>
+              <th scope="col">Preposição</th>
+              <th scope="col">+ ele</th>
+              <th scope="col">+ ela</th>
+              <th scope="col">+ eles</th>
+              <th scope="col">+ elas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>de</td><td>dele</td><td>dela</td><td>deles</td><td>delas</td></tr>
+            <tr><td>em</td><td>nele</td><td>nela</td><td>neles</td><td>nelas</td></tr>
+            <tr><td>a</td><td>a ele</td><td>a ela</td><td>a eles</td><td>a elas</td></tr>
+            <tr><td>por</td><td>por ele</td><td>por ela</td><td>por eles</td><td>por elas</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout example" role="note" aria-label="Exemplos com pronomes">
+        O livro é dela.<br>
+        Eu confio nele.<br>
+        O professor falou a eles.<br>
+        O trabalho foi feito por elas.
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
