@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Português Língua Estrangeira (PLE) Nível A2.">
+  <title>PLE A2 - Guia Interativo</title>
+
+  <link rel="preconnect" href="https://rsms.me">
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+  <style>
+    /* --- CSS Variables & Theming (Apple-style Aesthetic) --- */
+    :root {
+      --app-bg: #F5F5F7;
+      --card-bg: #FFFFFF;
+      --text-main: #1D1D1F;
+      --text-muted: #86868B;
+      --primary: #0066CC;
+      --primary-hover: #005BB5;
+      --border: #E5E5EA;
+      --sidebar-bg: rgba(245, 245, 247, 0.75);
+      
+      --grammar-bg: #FFF4F4;
+      --grammar-border: #FF3B30;
+      --grammar-text: #8E0000;
+      
+      --example-bg: #F2FBFA;
+      --example-border: #34C759;
+      --example-text: #0F5922;
+      
+      --table-header-bg: #F2F2F7;
+      --table-hover-bg: #F9F9FB;
+      --table-border: #E5E5EA;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius-sm: 10px;
+      --radius-lg: 20px;
+      
+      --nav-width: 320px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --app-bg: #000000;
+        --card-bg: #1C1C1E;
+        --text-main: #F5F5F7;
+        --text-muted: #98989D;
+        --primary: #0A84FF;
+        --primary-hover: #409CFF;
+        --border: #38383A;
+        --sidebar-bg: rgba(0, 0, 0, 0.75);
+        
+        --grammar-bg: #321113;
+        --grammar-border: #FF453A;
+        --grammar-text: #FFD4D2;
+        
+        --example-bg: #0C2E1A;
+        --example-border: #30D158;
+        --example-text: #B4F5C8;
+        
+        --table-header-bg: #2C2C2E;
+        --table-hover-bg: #3A3A3C;
+        --table-border: #38383A;
+
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    /* --- Reset & Base --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      background: var(--app-bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      z-index: 10000;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+    /* --- Layout --- */
+    .app-container {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* --- Header (Mobile Only) --- */
+    .mobile-header {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    
+    .mobile-header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* --- Sidebar Navigation --- */
+    .sidebar {
+      width: var(--nav-width);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 40;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-header {
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-header h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: var(--text-muted);
+      width: 16px;
+      height: 16px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      overflow-y: auto;
+      flex: 1;
+      padding-right: 0.5rem;
+    }
+    
+    .nav-menu::-webkit-scrollbar { width: 6px; }
+    .nav-menu::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+    .nav-menu li {
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--border);
+      color: var(--text-main);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* --- Main Content --- */
+    main {
+      flex: 1;
+      padding: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      scroll-margin-top: 2rem;
+    }
+
+    section:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* --- Typography & Elements --- */
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: "";
+      width: 6px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    p, ul, ol {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    section ul, section ol {
+      margin-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* --- Callouts --- */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-left: 4px solid;
+      border-radius: var(--radius-sm);
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .grammar {
+      background: var(--grammar-bg);
+      border-color: var(--grammar-border);
+      color: var(--grammar-text);
+    }
+
+    .example {
+      background: var(--example-bg);
+      border-color: var(--example-border);
+      color: var(--example-text);
+      font-style: italic;
+    }
+
+    /* --- Tables --- */
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--table-border);
+      background: var(--card-bg);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--table-border);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+
+    th[scope="col"] {
+      background: var(--table-header-bg);
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.02em;
+    }
+
+    tbody tr {
+      transition: background 0.2s ease;
+    }
+
+    tbody tr:hover {
+      background: var(--table-hover-bg);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .number {
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    /* Focus accessibility */
+    :focus-visible {
+      outline: 3px solid rgba(10, 132, 255, 0.5);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* --- Hidden State for Search --- */
+    .hidden-by-search {
+      display: none !important;
+    }
+
+    /* --- Responsive Design --- */
+    @media (max-width: 1024px) {
+      main { padding: 2rem; }
+      section { padding: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-header { display: flex; }
+      
+      .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        width: 85%;
+        max-width: 320px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      main {
+        padding: 1.5rem 1rem;
+        width: 100%;
+      }
+
+      section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 { font-size: 1.4rem; }
+      table { min-width: 380px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
+
+  <div class="mobile-header">
+    <h1>PLE A2</h1>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="app-container">
+    
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1>PLE Nível A2</h1>
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg>
+          <input type="text" id="search-input" placeholder="Pesquisar regras..." aria-label="Pesquisar">
+        </div>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        </ul>
+    </aside>
+
+    <main id="main-content">
+      
+      <section id="alfabeto" aria-labelledby="alfabeto-title">
+        <h2 id="alfabeto-title">1. Alfabeto Português</h2>
+        <p>O alfabeto português é composto por 26 letras.</p>
+        
+        <div class="table-container" aria-labelledby="alfabeto-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Letra</th>
+                <th scope="col">Pronúncia</th>
+                <th scope="col">Letra</th>
+                <th scope="col">Pronúncia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>á</td><td>N</td><td>éne</td></tr>
+              <tr><td>B</td><td>bê</td><td>O</td><td>ó</td></tr>
+              <tr><td>C</td><td>cê</td><td>P</td><td>pê</td></tr>
+              <tr><td>D</td><td>dê</td><td>Q</td><td>quê</td></tr>
+              <tr><td>E</td><td>é</td><td>R</td><td>érre</td></tr>
+              <tr><td>F</td><td>éfe</td><td>S</td><td>ésse</td></tr>
+              <tr><td>G</td><td>gê</td><td>T</td><td>tê</td></tr>
+              <tr><td>H</td><td>agá</td><td>U</td><td>u</td></tr>
+              <tr><td>I</td><td>i</td><td>V</td><td>vê</td></tr>
+              <tr><td>J</td><td>jota</td><td>W</td><td>dáblio</td></tr>
+              <tr><td>K</td><td>cápa</td><td>X</td><td>xis</td></tr>
+              <tr><td>L</td><td>éle</td><td>Y</td><td>ípsilon</td></tr>
+              <tr><td>M</td><td>éme</td><td>Z</td><td>zê</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout grammar" role="note" aria-label="Nota de gramática">
+          As vogais em português são A, E, I, O e U, e podem ter sons abertos, fechados ou nasais.
+        </aside>
+      </section>
+
+      <section id="acentos" aria-labelledby="acentos-title">
+        <h2 id="acentos-title">2. Acentos Gráficos</h2>
+        <p>A língua portuguesa utiliza vários acentos gráficos para indicar a pronúncia correta das vogais.</p>
+        <ul>
+          <li>Acento agudo (´) — indica som aberto</li>
+          <li>Acento grave (`) — usado na contração da preposição "a" com os artigos "a" ou "as"</li>
+          <li>Acento circunflexo (^) — indica som fechado</li>
+        </ul>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o til">
+          O til (~) não é tecnicamente um acento, mas um sinal diacrítico que indica nasalidade.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de acentuação">
+          Sábado — agudo.<br>
+          À escola — grave.<br>
+          Avô — circunflexo.<br>
+          Pão — til.
+        </aside>
+      </section>
+
+      <section id="classificacao-palavras" aria-labelledby="classificacao-title">
+        <h2 id="classificacao-title">3. Classificação das Palavras</h2>
+        <p>As palavras podem ser classificadas de acordo com a posição da sílaba tónica.</p>
+        <ul>
+          <li>Agudas — acento na última sílaba</li>
+          <li>Graves — acento na penúltima sílaba</li>
+          <li>Esdrúxulas — acento na antepenúltima sílaba</li>
+        </ul>
+        <aside class="callout grammar" role="note" aria-label="Nota gramatical sobre esdrúxulas">
+          A maioria das palavras graves terminadas em A, E, O, AM, EM e ENS não tem acento gráfico.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de classificação">
+          Café — aguda.<br>
+          Fácil — grave.<br>
+          Lâmpada — esdrúxula.
+        </aside>
+      </section>
+
+      <section id="numeros" aria-labelledby="numeros-title">
+        <h2 id="numeros-title">4. Números</h2>
+        <p>Os numerais em português dividem-se em cardinais e ordinais.</p>
+        
+        <h3 id="numeros-cardinais-title">Números cardinais</h3>
+        <div class="table-container" aria-labelledby="numeros-cardinais-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="number">1</td><td>um</td><td>uma</td></tr>
+              <tr><td class="number">2</td><td>dois</td><td>duas</td></tr>
+              <tr><td class="number">3</td><td>três</td><td>três</td></tr>
+              <tr><td class="number">10</td><td>dez</td><td>dez</td></tr>
+              <tr><td class="number">20</td><td>vinte</td><td>vinte</td></tr>
+              <tr><td class="number">100</td><td>cem</td><td>cem</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="numeros-ordinais-title">Números ordinais</h3>
+        <div class="table-container" aria-labelledby="numeros-ordinais-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="number">1º</td><td>primeiro</td><td>primeira</td></tr>
+              <tr><td class="number">2º</td><td>segundo</td><td>segunda</td></tr>
+              <tr><td class="number">3º</td><td>terceiro</td><td>terceira</td></tr>
+              <tr><td class="number">10º</td><td>décimo</td><td>décima</td></tr>
+              <tr><td class="number">20º</td><td>vigésimo</td><td>vigésima</td></tr>
+              <tr><td class="number">100º</td><td>centésimo</td><td>centésima</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="horas" aria-labelledby="horas-title">
+        <h2 id="horas-title">5. Horas</h2>
+        <p>Para indicar as horas, usam-se estruturas diferentes consoante a hora ser singular ou plural.</p>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre uso de é e são">
+          Usa-se "É" para uma hora e "São" para as restantes, acrescentando os minutos após a hora com "e".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de horas">
+          É uma da madrugada.<br>
+          São duas e dez.<br>
+          São sete e meia da manhã.<br>
+          São cinco menos um quarto da tarde.<br>
+          São dez da noite.
+        </aside>
+      </section>
+
+      <section id="estrutura-frase" aria-labelledby="estrutura-title">
+        <h2 id="estrutura-title">6. Estrutura da Frase</h2>
+        <p>A estrutura básica da frase em português é formada por sujeito, verbo e complemento.</p>
+        <aside class="callout example" role="note" aria-label="Exemplos de estrutura básica">
+          Eu estudo português.<br>
+          Ela compra pão.<br>
+          Nós estamos na escola.
+        </aside>
+
+        <h3 id="artigos-title">Artigos</h3>
+        <aside class="callout grammar" role="note">
+          Concordam com o substantivo em género e número e podem ser definidos ou indefinidos.
+        </aside>
+        <div class="table-container" aria-labelledby="artigos-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Definido</td><td>o / os</td><td>a / as</td></tr>
+              <tr><td>Indefinido</td><td>um / uns</td><td>uma / umas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          O carro.<br>
+          As casas.<br>
+          Uma mesa.<br>
+          Uns livros.
+        </aside>
+
+        <h3>Adjetivos</h3>
+        <aside class="callout grammar" role="note">
+          Qualificam o substantivo, geralmente vindo depois dele.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de adjetivos">
+          Carro novo.<br>
+          Casa grande.<br>
+          Livro interessante.
+        </aside>
+
+        <h3>Advérbios</h3>
+        <aside class="callout grammar" role="note">
+          Modificam verbos, adjetivos ou outros advérbios e são invariáveis.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de advérbios">
+          Eu estudo muito.<br>
+          Ele fala bem português.<br>
+          Ela está muito cansada.
+        </aside>
+      </section>
+
+      <section id="possessivos" aria-labelledby="possessivos-title">
+        <h2 id="possessivos-title">7. Possessivos</h2>
+        <p>Os possessivos indicam posse e concordam com o objeto possuído em género e número.</p>
+        
+        <h3 id="possessivos-formas-title">Formas principais</h3>
+        <div class="table-container" aria-labelledby="possessivos-formas-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>meu / minha</td><td>meus / minhas</td></tr>
+              <tr><td>Tu</td><td>teu / tua</td><td>teus / tuas</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>seu / sua</td><td>seus / suas</td></tr>
+              <tr><td>Nós</td><td>nosso / nossa</td><td>nossos / nossas</td></tr>
+              <tr><td>Vocês</td><td>vosso / vossa</td><td>vossos / vossas</td></tr>
+              <tr><td>Eles / Elas</td><td>seu / sua</td><td>seus / suas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos de possessivos">
+          O meu livro é interessante.<br>
+          A minha casa é pequena.<br>
+          Os meus amigos são simpáticos.
+        </aside>
+
+        <h3>Pronome possessivo</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre pronome possessivo">
+          Substitui o nome e não usa artigo.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de pronomes possessivos">
+          O livro é meu.<br>
+          A casa é minha.
+        </aside>
+
+        <h3>Uso de "dele" e "dela"</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o uso de dele e dela">
+          Forma mais comum na língua falada para evitar confusão com "seu" e "sua".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos do uso de dele e dela">
+          O livro é dele.<br>
+          A irmã dela chega amanhã.
+        </aside>
+      </section>
+
+      <section id="verbos-ser-estar-ter" aria-labelledby="verbos-title">
+        <h2 id="verbos-title">8. Verbos ser, estar e ter</h2>
+        <p>Os verbos ser, estar e ter são fundamentais em português.</p>
+        
+        <h3>Verbo ser</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ser">
+          Expressa características permanentes e usa-se "ser de" com as contracções do, da, dos, das para indicar origem ou pertença.
+        </aside>
+        <ul>
+          <li>Origem</li>
+          <li>Pertença</li>
+          <li>Material</li>
+          <li>Profissão</li>
+          <li>Estado civil</li>
+        </ul>
+        <aside class="callout example" role="note" aria-label="Exemplos com ser">
+          Sou de Portugal.<br>
+          O carro é da Susana.<br>
+          O copo é de vidro.<br>
+          Ela é médica.<br>
+          Eu sou casado.
+        </aside>
+
+        <h3>Verbo estar</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo estar">
+          Expressa características temporárias e usa-se "estar com" para sensações físicas ou emoções.
+        </aside>
+        <ul>
+          <li>Estado passageiro</li>
+          <li>Localização</li>
+          <li>Sensações e condições físicas</li>
+        </ul>
+        <aside class="callout example" role="note" aria-label="Exemplos com estar">
+          Eu estou doente.<br>
+          Eles estão no supermercado.<br>
+          Está calor hoje.<br>
+          Estou com frio.<br>
+          Nós estamos com medo.
+        </aside>
+
+        <h3>Verbo ter</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ter">
+          Indica posse ou idade e usa-se "ter de" ou "ter que" para obrigação.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com ter">
+          Tenho 28 anos.<br>
+          Ela tem um carro.<br>
+          Nós temos fome.<br>
+          Tenho que estudar.<br>
+          Eles têm de comprar comida.
+        </aside>
+
+        <h3 id="conjugacao-title">Conjugação no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="conjugacao-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">SER</th>
+                <th scope="col">ESTAR</th>
+                <th scope="col">TER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>sou</td><td>estou</td><td>tenho</td></tr>
+              <tr><td>Tu</td><td>és</td><td>estás</td><td>tens</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>é</td><td>está</td><td>tem</td></tr>
+              <tr><td>Nós</td><td>somos</td><td>estamos</td><td>temos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>são</td><td>estão</td><td>têm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="estar-andar" aria-labelledby="estar-andar-title">
+        <h2 id="estar-andar-title">9. Uso de "estar" e "andar"</h2>
+        <p>Os verbos "estar" e "andar" podem ter significados diferentes dependendo do contexto.</p>
+        
+        <h3>Diferença entre estar e andar</h3>
+        <aside class="callout grammar" role="note" aria-label="Diferença entre estar e andar">
+          Refere-se ao momento presente e exato com "estar" e a uma situação recente, contínua ou habitual com "andar".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos práticos">
+          Estou bem — agora.<br>
+          Ando bem — ultimamente.
+        </aside>
+
+        <h3>Construções "estar a" e "andar a"</h3>
+        <aside class="callout grammar" role="note" aria-label="Estar a vs Andar a">
+          Indica uma ação em curso com "estar a + infinitivo" e uma ação repetida, prolongada ou habitual nos últimos tempos com "andar a + infinitivo".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com estar a e andar a">
+          Eu estou a estudar português — neste momento.<br>
+          Eu ando a estudar português — nestas últimas semanas/meses.
+        </aside>
+
+        <h3>"Ir + gerúndio" (ação progressiva)</h3>
+        <aside class="callout grammar" role="note" aria-label="Ação progressiva com ir e gerúndio">
+          Indica uma ação que se desenvolve gradualmente (pouco a pouco) com "ir + gerúndio".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com ir e gerúndio">
+          A professora explica e os alunos vão percebendo.<br>
+          O meu nível de português vai melhorando todos os dias.
+        </aside>
+      </section>
+
+      <section id="verbos-regulares" aria-labelledby="verbos-regulares-title">
+        <h2 id="verbos-regulares-title">10. Verbos Regulares</h2>
+        <p>Os verbos regulares em português dividem-se em três grupos, que são AR, ER e IR.</p>
+        
+        <h3 id="verbos-ar-title">Verbos em AR no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-ar-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Falar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>falo</td></tr>
+              <tr><td>Tu</td><td>as</td><td>falas</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>a</td><td>fala</td></tr>
+              <tr><td>Nós</td><td>amos</td><td>falamos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>am</td><td>falam</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu falo português.<br>
+          Tu falas muito rápido.
+        </aside>
+
+        <h3 id="verbos-er-title">Verbos em ER no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-er-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Comer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>como</td></tr>
+              <tr><td>Tu</td><td>es</td><td>comes</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>e</td><td>come</td></tr>
+              <tr><td>Nós</td><td>emos</td><td>comemos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>em</td><td>comem</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu como pão.<br>
+          Eles comem ao meio-dia.
+        </aside>
+
+        <h3 id="verbos-ir-title">Verbos em IR no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-ir-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Abrir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>abro</td></tr>
+              <tr><td>Tu</td><td>es</td><td>abres</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>e</td><td>abre</td></tr>
+              <tr><td>Nós</td><td>imos</td><td>abrimos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>em</td><td>abrem</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu abro a porta.<br>
+          Nós abrimos a loja.
+        </aside>
+      </section>
+
+      <section id="contracoes-preposicoes" aria-labelledby="contracoes-title">
+        <h2 id="contracoes-title">11. Contrações de Preposições</h2>
+        <p>Algumas preposições contraem-se com artigos e pronomes em português.</p>
+        
+        <h3 id="contracoes-artigos-title">Contrações de preposições com artigos</h3>
+        <div class="table-container" aria-labelledby="contracoes-artigos-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ o</th>
+                <th scope="col">+ a</th>
+                <th scope="col">+ os</th>
+                <th scope="col">+ as</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>do</td><td>da</td><td>dos</td><td>das</td></tr>
+              <tr><td>em</td><td>no</td><td>na</td><td>nos</td><td>nas</td></tr>
+              <tr><td>a</td><td>ao</td><td>à</td><td>aos</td><td>às</td></tr>
+              <tr><td>por</td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos de contrações">
+          Eu sou do Brasil.<br>
+          Nós estamos na escola.<br>
+          Cheguei às oito horas.<br>
+          Caminhamos pelo parque.
+        </aside>
+
+        <h3 id="contracoes-pronomes-title">Contrações de preposições com pronomes</h3>
+        <aside class="callout grammar" role="note">
+          Combinações como "a ele" e "por ele" não sofrem alteração na escrita.
+        </aside>
+        <div class="table-container" aria-labelledby="contracoes-pronomes-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ ele</th>
+                <th scope="col">+ ela</th>
+                <th scope="col">+ eles</th>
+                <th scope="col">+ elas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>dele</td><td>dela</td><td>deles</td><td>delas</td></tr>
+              <tr><td>em</td><td>nele</td><td>nela</td><td>neles</td><td>nelas</td></tr>
+              <tr><td>a</td><td>a ele</td><td>a ela</td><td>a eles</td><td>a elas</td></tr>
+              <tr><td>por</td><td>por ele</td><td>por ela</td><td>por eles</td><td>por elas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos com pronomes">
+          O livro é dela.<br>
+          Eu confio nele.<br>
+          O professor falou a eles.<br>
+          O trabalho foi feito por elas.
+        </aside>
+      </section>
+
+      <section id="demonstrativos" aria-labelledby="demonstrativos-title">
+        <h2 id="demonstrativos-title">12. Demonstrativos</h2>
+        <p>Os demonstrativos indicam a posição de algo em relação ao falante e ao ouvinte.</p>
+        
+        <h3>Proximidade</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de proximidade">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>este / esta</td><td>estes / estas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Distância média</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de distância média">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>esse / essa</td><td>esses / essas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Distância</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de distância">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>aquele / aquela</td><td>aqueles / aquelas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example">
+          Eu bebo esta cerveja.<br>
+          Esse livro é interessante.<br>
+          Preferes esta mesa ou aquela?
+        </aside>
+
+        <h3>Formas invariáveis</h3>
+        <aside class="callout grammar">
+          "Isto", "isso" e "aquilo" são usados para coisas abstratas ou desconhecidas.
+        </aside>
+        <aside class="callout example">
+          O que é isto?<br>
+          O que é isso?<br>
+          O que é aquilo?
+        </aside>
+      </section>
+
+      <section id="contracoes-avancadas" aria-labelledby="contracoes-avancadas-title">
+        <h2 id="contracoes-avancadas-title">13. Contrações Avançadas</h2>
+        <p>As contrações também ocorrem com artigos indefinidos e demonstrativos.</p>
+        
+        <h3>Com artigos indefinidos</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com artigos indefinidos">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ um</th>
+                <th scope="col">+ uma</th>
+                <th scope="col">+ uns</th>
+                <th scope="col">+ umas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>dum</td><td>duma</td><td>duns</td><td>dumas</td></tr>
+              <tr><td>em</td><td>num</td><td>numa</td><td>nuns</td><td>numas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Com demonstrativos variáveis</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com demonstrativos variáveis">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ este</th>
+                <th scope="col">+ esse</th>
+                <th scope="col">+ aquele</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>deste</td><td>desse</td><td>daquele</td></tr>
+              <tr><td>em</td><td>neste</td><td>nesse</td><td>naquele</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Com demonstrativos invariáveis</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com demonstrativos invariáveis">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ isto</th>
+                <th scope="col">+ isso</th>
+                <th scope="col">+ aquilo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>disto</td><td>disso</td><td>daquilo</td></tr>
+              <tr><td>em</td><td>nisto</td><td>nisso</td><td>naquilo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const navMenu = document.getElementById('nav-menu');
+      const searchInput = document.getElementById('search-input');
+      const menuToggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+
+      // 1. Generate Sidebar Navigation dynamically
+      sections.forEach(sec => {
+        const h2 = sec.querySelector('h2');
+        if(h2) {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#' + sec.id;
+          a.textContent = h2.textContent;
+          a.className = 'nav-link';
+          li.appendChild(a);
+          navMenu.appendChild(li);
+        }
+      });
+
+      // 2. ScrollSpy functionality
+      const navLinks = document.querySelectorAll('.nav-link');
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -75% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+            if(activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(sec => observer.observe(sec));
+
+      // 3. Real-time Search Filter
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        
+        sections.forEach(sec => {
+          const content = sec.textContent.toLowerCase();
+          const navItem = document.querySelector(`.nav-link[href="#${sec.id}"]`).parentElement;
+
+          if (content.includes(query)) {
+            sec.classList.remove('hidden-by-search');
+            navItem.style.display = 'block';
+          } else {
+            sec.classList.add('hidden-by-search');
+            navItem.style.display = 'none';
+          }
+        });
+      });
+
+      // 4. Mobile Menu Toggle
+      menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+
+      // Close mobile menu when a navigation link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+
+      // Optional: close sidebar when clicking outside on mobile
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
