@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════
+       SEO & META TAGS AMÉLIORÉS
+  ════════════════════════════════════════════ -->
+  <title>PLE A2 — Guia Interativo de Português Língua Estrangeira</title>
+  <meta name="description" content="Guia interativo completo de Português Língua Estrangeira nível A2. Estude alfabeto, gramática, verbos, contrações e muito mais — organizado por temas.">
+  <meta name="keywords" content="PLE, português língua estrangeira, nível A2, gramática portuguesa, aprender português, guia interativo">
+  <meta name="author" content="PLE A2 Guide">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PLE A2 — Guia Interativo de Português">
+  <meta property="og:description" content="Guia interativo completo de Português Língua Estrangeira nível A2. Gramática, verbos, contrações e mais — organizado por temas.">
+  <meta property="og:image" content="https://example.com/og-image.png">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="PLE A2 Guia Interativo">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PLE A2 — Guia Interativo de Português">
+  <meta name="twitter:description" content="Guia interativo completo de Português Língua Estrangeira nível A2.">
+  <meta name="twitter:image" content="https://example.com/og-image.png">
+
+  <!-- Favicon (emoji SVG inline — funciona em todos os browsers modernos) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇹</text></svg>">
+
+  <!-- Fonte: Inter (preconnect + preload) -->
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       CSS VARIABLES & THEMING (Apple-style Aesthetic)
+       Palette inchangée, nouvelles variables ajoutées pour les
+       nouvelles fonctionnalités (progress bar, highlight, overlay…)
+    ═══════════════════════════════════════════════════════════════ */
+    :root {
+      --app-bg: #F5F5F7;
+      --card-bg: #FFFFFF;
+      --text-main: #1D1D1F;
+      --text-muted: #86868B;
+      --primary: #0066CC;
+      --primary-hover: #005BB5;
+      --border: #E5E5EA;
+      --sidebar-bg: rgba(245, 245, 247, 0.85);
+
+      --grammar-bg: #FFF4F4;
+      --grammar-border: #FF3B30;
+      --grammar-text: #8E0000;
+
+      --example-bg: #F2FBFA;
+      --example-border: #34C759;
+      --example-text: #0F5922;
+
+      --table-header-bg: #F2F2F7;
+      --table-hover-bg: #F9F9FB;
+      --table-border: #E5E5EA;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.14);
+      --radius-sm: 10px;
+      --radius-lg: 20px;
+
+      --nav-width: 320px;
+
+      /* Nouvelles variables */
+      --progress-height: 3px;
+      --progress-color: var(--primary);
+      --highlight-bg: rgba(255, 214, 10, 0.35);
+      --highlight-border: rgba(255, 179, 0, 0.6);
+      --overlay-bg: rgba(0, 0, 0, 0.45);
+      --back-top-size: 48px;
+      --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --app-bg: #000000;
+        --card-bg: #1C1C1E;
+        --text-main: #F5F5F7;
+        --text-muted: #98989D;
+        --primary: #0A84FF;
+        --primary-hover: #409CFF;
+        --border: #38383A;
+        --sidebar-bg: rgba(0, 0, 0, 0.85);
+
+        --grammar-bg: #321113;
+        --grammar-border: #FF453A;
+        --grammar-text: #FFD4D2;
+
+        --example-bg: #0C2E1A;
+        --example-border: #30D158;
+        --example-text: #B4F5C8;
+
+        --table-header-bg: #2C2C2E;
+        --table-hover-bg: #3A3A3C;
+        --table-border: #38383A;
+
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+        --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.8);
+        --highlight-bg: rgba(255, 214, 10, 0.18);
+        --highlight-border: rgba(255, 214, 10, 0.4);
+        --overlay-bg: rgba(0, 0, 0, 0.65);
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════════════════════════ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      background: var(--app-bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* Empêcher le scroll quand le menu mobile est ouvert */
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      z-index: 10000;
+      font-weight: 600;
+    }
+    .skip-link:focus { left: 1rem; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BARRE DE PROGRESSION DE LECTURE (scroll progress)
+    ═══════════════════════════════════════════════════════════════ */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: var(--progress-height);
+      background: linear-gradient(90deg, var(--primary), #34C759);
+      z-index: 9999;
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+      /* Légère ombre pour la visibilité */
+      box-shadow: 0 0 8px rgba(0, 102, 204, 0.4);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════════════════════════ */
+    .app-container {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       OVERLAY MOBILE (fond sombre quand le menu est ouvert)
+    ═══════════════════════════════════════════════════════════════ */
+    #sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--overlay-bg);
+      z-index: 39;
+      opacity: 0;
+      transition: opacity var(--transition-smooth);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    #sidebar-overlay.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar-overlay { display: block; pointer-events: none; }
+      #sidebar-overlay.visible { pointer-events: auto; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       MOBILE HEADER
+    ═══════════════════════════════════════════════════════════════ */
+    .mobile-header {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.875rem 1.5rem;
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .mobile-header h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: var(--primary);
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .menu-toggle:hover {
+      background: var(--border);
+      transform: scale(1.06);
+    }
+
+    .menu-toggle:active {
+      transform: scale(0.96);
+    }
+
+    /* Icône hamburger animée */
+    .menu-toggle .bar {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform var(--transition-smooth), opacity var(--transition-fast);
+      transform-origin: center;
+    }
+
+    .menu-toggle-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Transformation en "X" quand ouvert */
+    body.menu-open .menu-toggle .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    body.menu-open .menu-toggle .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    body.menu-open .menu-toggle .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SIDEBAR NAVIGATION
+    ═══════════════════════════════════════════════════════════════ */
+    .sidebar {
+      width: var(--nav-width);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 40;
+      transition: transform var(--transition-smooth);
+    }
+
+    .sidebar-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Badge niveau */
+    .sidebar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.65rem;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SEARCH BOX AMÉLIORÉE
+    ═══════════════════════════════════════════════════════════════ */
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: var(--text-muted);
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      transition: fill var(--transition-fast);
+    }
+
+    .search-box input:focus ~ .search-icon,
+    .search-box:has(input:focus) .search-icon {
+      fill: var(--primary);
+    }
+
+    /* Bouton clear "×" */
+    .search-clear {
+      position: absolute;
+      right: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      color: var(--card-bg);
+      border: none;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      line-height: 1;
+    }
+
+    .search-clear:hover { background: var(--text-main); transform: translateY(-50%) scale(1.1); }
+    .search-clear.visible { display: flex; }
+
+    /* Compteur de résultats */
+    .search-count {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      padding-left: 0.25rem;
+      min-height: 1.2em;
+      transition: opacity var(--transition-fast);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAVIGATION MENU
+    ═══════════════════════════════════════════════════════════════ */
+    .nav-menu {
+      list-style: none;
+      overflow-y: auto;
+      flex: 1;
+      padding-right: 0.25rem;
+      scroll-behavior: smooth;
+    }
+
+    .nav-menu::-webkit-scrollbar { width: 5px; }
+    .nav-menu::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    .nav-menu::-webkit-scrollbar-track { background: transparent; }
+
+    .nav-menu li { margin-bottom: 0.2rem; }
+
+    /* Item caché lors de la recherche */
+    .nav-menu li.nav-hidden {
+      display: none;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Numéro de section dans la nav */
+    .nav-link .nav-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      opacity: 0.7;
+      min-width: 1.4rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .nav-link:hover {
+      background: var(--border);
+      color: var(--text-main);
+      transform: translateX(2px);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.25);
+    }
+
+    .nav-link.active .nav-num {
+      color: rgba(255,255,255,0.75);
+      opacity: 1;
+    }
+
+    /* Ripple effect sur le click */
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: currentColor;
+      opacity: 0;
+      border-radius: inherit;
+      transform: scale(0);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-link:active::after {
+      transform: scale(1);
+      opacity: 0.1;
+      transition: none;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+    ═══════════════════════════════════════════════════════════════ */
+    main {
+      flex: 1;
+      padding: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SECTIONS — FADE-IN À L'APPARITION
+    ═══════════════════════════════════════════════════════════════ */
+    section {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), opacity 0.4s ease;
+      scroll-margin-top: 2rem;
+
+      /* État initial pour l'animation fade-in */
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    /* Classe ajoutée par l'IntersectionObserver */
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* Section en surbrillance (résultat de recherche) */
+    section.search-match {
+      border-color: var(--highlight-border);
+      box-shadow: 0 0 0 2px var(--highlight-border), var(--shadow-sm);
+    }
+
+    /* État caché (filtrage) */
+    .hidden-by-search {
+      display: none !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HIGHLIGHT — SURLIGNAGE DES RÉSULTATS DE RECHERCHE
+    ═══════════════════════════════════════════════════════════════ */
+    mark.search-highlight {
+      background: var(--highlight-bg);
+      color: inherit;
+      border-radius: 3px;
+      padding: 0 2px;
+      border-bottom: 2px solid var(--highlight-border);
+      /* Pas d'animation pour les performances */
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════════════════════════════ */
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::before {
+      content: "";
+      width: 5px;
+      height: 24px;
+      background: linear-gradient(180deg, var(--primary), #34C759);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    p, ul, ol {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    section ul, section ol { margin-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CALLOUTS
+    ═══════════════════════════════════════════════════════════════ */
+    .callout {
+      padding: 1.1rem 1.4rem;
+      border-left: 4px solid;
+      border-radius: var(--radius-sm);
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .callout:hover {
+      transform: translateX(3px);
+    }
+
+    .grammar {
+      background: var(--grammar-bg);
+      border-color: var(--grammar-border);
+      color: var(--grammar-text);
+    }
+
+    .example {
+      background: var(--example-bg);
+      border-color: var(--example-border);
+      color: var(--example-text);
+      font-style: italic;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       TABLES
+    ═══════════════════════════════════════════════════════════════ */
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--table-border);
+      background: var(--card-bg);
+      transition: box-shadow var(--transition-fast);
+    }
+
+    .table-container:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+
+    th, td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid var(--table-border);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+
+    th[scope="col"] {
+      background: var(--table-header-bg);
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.02em;
+    }
+
+    tbody tr {
+      transition: background var(--transition-fast);
+    }
+
+    tbody tr:hover { background: var(--table-hover-bg); }
+    tr:last-child td { border-bottom: none; }
+
+    .number {
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    /* Focus accessibilité */
+    :focus-visible {
+      outline: 3px solid rgba(10, 132, 255, 0.5);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BOUTON "RETOUR EN HAUT"
+    ═══════════════════════════════════════════════════════════════ */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: var(--back-top-size);
+      height: var(--back-top-size);
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 102, 204, 0.35);
+      z-index: 100;
+
+      /* État initial caché */
+      opacity: 0;
+      transform: translateY(16px) scale(0.85);
+      pointer-events: none;
+      transition: opacity var(--transition-smooth), transform var(--transition-spring), background var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    #back-to-top:hover {
+      background: var(--primary-hover);
+      box-shadow: 0 6px 20px rgba(0, 102, 204, 0.45);
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    #back-to-top:active {
+      transform: translateY(0) scale(0.96);
+    }
+
+    #back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ÉTAT VIDE (aucun résultat de recherche)
+    ═══════════════════════════════════════════════════════════════ */
+    #no-results {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+    }
+
+    #no-results.visible { display: block; }
+
+    #no-results svg {
+      width: 48px;
+      height: 48px;
+      stroke: var(--text-muted);
+      fill: none;
+      stroke-width: 1.5;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    #no-results p { font-size: 0.95rem; margin: 0; }
+    #no-results strong { color: var(--text-main); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      main { padding: 2rem; }
+      section { padding: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-header { display: flex; }
+
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-105%);
+        width: 85%;
+        max-width: 320px;
+        box-shadow: var(--shadow-xl);
+        /* Animation plus fluide (spring) */
+        transition: transform var(--transition-smooth);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      main {
+        padding: 1.5rem 1rem;
+        width: 100%;
+      }
+
+      section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius-sm);
+      }
+
+      h2 { font-size: 1.4rem; }
+      table { min-width: 380px; }
+
+      #back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ANIMATIONS KEYFRAMES
+    ═══════════════════════════════════════════════════════════════ */
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 102, 204, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0); }
+    }
+
+    /* Réduction de mouvement (accessibilité) */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+      section { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barre de progression de lecture -->
+  <div id="scroll-progress" role="progressbar" aria-label="Progresso de leitura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Skip link accessibilité -->
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
+
+  <!-- Overlay mobile (fond sombre) -->
+  <div id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Header mobile -->
+  <header class="mobile-header" role="banner">
+    <h1>PLE A2</h1>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+      <span class="menu-toggle-icon" aria-hidden="true">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </span>
+    </button>
+  </header>
+
+  <div class="app-container">
+
+    <!-- ═════════════════════════════════════════
+         SIDEBAR NAVIGATION
+    ════════════════════════════════════════════ -->
+    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="sidebar-header">
+        <h1>PLE Nível A2</h1>
+        <span class="sidebar-badge">Guia Interativo</span>
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/>
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Pesquisar temas..."
+            aria-label="Pesquisar secções"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button class="search-clear" id="search-clear" aria-label="Limpar pesquisa" title="Limpar">×</button>
+        </div>
+        <div class="search-count" id="search-count" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <!-- Généré dynamiquement par JavaScript -->
+      </ul>
+    </aside>
+
+    <!-- ═════════════════════════════════════════
+         MAIN CONTENT
+    ════════════════════════════════════════════ -->
+    <main id="main-content" tabindex="-1">
+
+      <!-- Message "aucun résultat" -->
+      <div id="no-results" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/>
+        </svg>
+        <p>Nenhum resultado para <strong id="no-results-query"></strong></p>
+      </div>
+
+      <section id="alfabeto" aria-labelledby="alfabeto-title" data-keywords="letras vogais consoantes pronúncia alphabet">
+        <h2 id="alfabeto-title">1. Alfabeto Português</h2>
+        <p>O alfabeto português é composto por 26 letras.</p>
+
+        <div class="table-container" aria-labelledby="alfabeto-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Letra</th>
+                <th scope="col">Pronúncia</th>
+                <th scope="col">Letra</th>
+                <th scope="col">Pronúncia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>á</td><td>N</td><td>éne</td></tr>
+              <tr><td>B</td><td>bê</td><td>O</td><td>ó</td></tr>
+              <tr><td>C</td><td>cê</td><td>P</td><td>pê</td></tr>
+              <tr><td>D</td><td>dê</td><td>Q</td><td>quê</td></tr>
+              <tr><td>E</td><td>é</td><td>R</td><td>érre</td></tr>
+              <tr><td>F</td><td>éfe</td><td>S</td><td>ésse</td></tr>
+              <tr><td>G</td><td>gê</td><td>T</td><td>tê</td></tr>
+              <tr><td>H</td><td>agá</td><td>U</td><td>u</td></tr>
+              <tr><td>I</td><td>i</td><td>V</td><td>vê</td></tr>
+              <tr><td>J</td><td>jota</td><td>W</td><td>dáblio</td></tr>
+              <tr><td>K</td><td>cápa</td><td>X</td><td>xis</td></tr>
+              <tr><td>L</td><td>éle</td><td>Y</td><td>ípsilon</td></tr>
+              <tr><td>M</td><td>éme</td><td>Z</td><td>zê</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout grammar" role="note" aria-label="Nota de gramática">
+          As vogais em português são A, E, I, O e U, e podem ter sons abertos, fechados ou nasais.
+        </aside>
+      </section>
+
+      <section id="acentos" aria-labelledby="acentos-title" data-keywords="acento agudo grave circunflexo til diacrítico vogais nasalidade">
+        <h2 id="acentos-title">2. Acentos Gráficos</h2>
+        <p>A língua portuguesa utiliza vários acentos gráficos para indicar a pronúncia correta das vogais.</p>
+        <ul>
+          <li>Acento agudo (´) — indica som aberto</li>
+          <li>Acento grave (`) — usado na contração da preposição "a" com os artigos "a" ou "as"</li>
+          <li>Acento circunflexo (^) — indica som fechado</li>
+        </ul>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o til">
+          O til (~) não é tecnicamente um acento, mas um sinal diacrítico que indica nasalidade.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de acentuação">
+          Sábado — agudo.<br>
+          À escola — grave.<br>
+          Avô — circunflexo.<br>
+          Pão — til.
+        </aside>
+      </section>
+
+      <section id="classificacao-palavras" aria-labelledby="classificacao-title" data-keywords="sílaba tónica agudas graves esdrúxulas classificação palavras">
+        <h2 id="classificacao-title">3. Classificação das Palavras</h2>
+        <p>As palavras podem ser classificadas de acordo com a posição da sílaba tónica.</p>
+        <ul>
+          <li>Agudas — acento na última sílaba</li>
+          <li>Graves — acento na penúltima sílaba</li>
+          <li>Esdrúxulas — acento na antepenúltima sílaba</li>
+        </ul>
+        <aside class="callout grammar" role="note" aria-label="Nota gramatical sobre esdrúxulas">
+          A maioria das palavras graves terminadas em A, E, O, AM, EM e ENS não tem acento gráfico.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de classificação">
+          Café — aguda.<br>
+          Fácil — grave.<br>
+          Lâmpada — esdrúxula.
+        </aside>
+      </section>
+
+      <section id="numeros" aria-labelledby="numeros-title" data-keywords="números cardinais ordinais contar primeiro segundo terceiro">
+        <h2 id="numeros-title">4. Números</h2>
+        <p>Os numerais em português dividem-se em cardinais e ordinais.</p>
+
+        <h3 id="numeros-cardinais-title">Números cardinais</h3>
+        <div class="table-container" aria-labelledby="numeros-cardinais-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="number">1</td><td>um</td><td>uma</td></tr>
+              <tr><td class="number">2</td><td>dois</td><td>duas</td></tr>
+              <tr><td class="number">3</td><td>três</td><td>três</td></tr>
+              <tr><td class="number">10</td><td>dez</td><td>dez</td></tr>
+              <tr><td class="number">20</td><td>vinte</td><td>vinte</td></tr>
+              <tr><td class="number">100</td><td>cem</td><td>cem</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="numeros-ordinais-title">Números ordinais</h3>
+        <div class="table-container" aria-labelledby="numeros-ordinais-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="number">1º</td><td>primeiro</td><td>primeira</td></tr>
+              <tr><td class="number">2º</td><td>segundo</td><td>segunda</td></tr>
+              <tr><td class="number">3º</td><td>terceiro</td><td>terceira</td></tr>
+              <tr><td class="number">10º</td><td>décimo</td><td>décima</td></tr>
+              <tr><td class="number">20º</td><td>vigésimo</td><td>vigésima</td></tr>
+              <tr><td class="number">100º</td><td>centésimo</td><td>centésima</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="horas" aria-labelledby="horas-title" data-keywords="horas tempo minutos manhã tarde noite madrugada é são meia quarto">
+        <h2 id="horas-title">5. Horas</h2>
+        <p>Para indicar as horas, usam-se estruturas diferentes consoante a hora ser singular ou plural.</p>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre uso de é e são">
+          Usa-se "É" para uma hora e "São" para as restantes, acrescentando os minutos após a hora com "e".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de horas">
+          É uma da madrugada.<br>
+          São duas e dez.<br>
+          São sete e meia da manhã.<br>
+          São cinco menos um quarto da tarde.<br>
+          São dez da noite.
+        </aside>
+      </section>
+
+      <section id="estrutura-frase" aria-labelledby="estrutura-title" data-keywords="frase sujeito verbo complemento artigos adjetivos advérbios substantivo">
+        <h2 id="estrutura-title">6. Estrutura da Frase</h2>
+        <p>A estrutura básica da frase em português é formada por sujeito, verbo e complemento.</p>
+        <aside class="callout example" role="note" aria-label="Exemplos de estrutura básica">
+          Eu estudo português.<br>
+          Ela compra pão.<br>
+          Nós estamos na escola.
+        </aside>
+
+        <h3 id="artigos-title">Artigos</h3>
+        <aside class="callout grammar" role="note">
+          Concordam com o substantivo em género e número e podem ser definidos ou indefinidos.
+        </aside>
+        <div class="table-container" aria-labelledby="artigos-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Tipo</th>
+                <th scope="col">Masculino</th>
+                <th scope="col">Feminino</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Definido</td><td>o / os</td><td>a / as</td></tr>
+              <tr><td>Indefinido</td><td>um / uns</td><td>uma / umas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          O carro.<br>
+          As casas.<br>
+          Uma mesa.<br>
+          Uns livros.
+        </aside>
+
+        <h3>Adjetivos</h3>
+        <aside class="callout grammar" role="note">
+          Qualificam o substantivo, geralmente vindo depois dele.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de adjetivos">
+          Carro novo.<br>
+          Casa grande.<br>
+          Livro interessante.
+        </aside>
+
+        <h3>Advérbios</h3>
+        <aside class="callout grammar" role="note">
+          Modificam verbos, adjetivos ou outros advérbios e são invariáveis.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de advérbios">
+          Eu estudo muito.<br>
+          Ele fala bem português.<br>
+          Ela está muito cansada.
+        </aside>
+      </section>
+
+      <section id="possessivos" aria-labelledby="possessivos-title" data-keywords="possessivos meu minha seu sua nosso nossa dele dela posse pronome">
+        <h2 id="possessivos-title">7. Possessivos</h2>
+        <p>Os possessivos indicam posse e concordam com o objeto possuído em género e número.</p>
+
+        <h3 id="possessivos-formas-title">Formas principais</h3>
+        <div class="table-container" aria-labelledby="possessivos-formas-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>meu / minha</td><td>meus / minhas</td></tr>
+              <tr><td>Tu</td><td>teu / tua</td><td>teus / tuas</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>seu / sua</td><td>seus / suas</td></tr>
+              <tr><td>Nós</td><td>nosso / nossa</td><td>nossos / nossas</td></tr>
+              <tr><td>Vocês</td><td>vosso / vossa</td><td>vossos / vossas</td></tr>
+              <tr><td>Eles / Elas</td><td>seu / sua</td><td>seus / suas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos de possessivos">
+          O meu livro é interessante.<br>
+          A minha casa é pequena.<br>
+          Os meus amigos são simpáticos.
+        </aside>
+
+        <h3>Pronome possessivo</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre pronome possessivo">
+          Substitui o nome e não usa artigo.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos de pronomes possessivos">
+          O livro é meu.<br>
+          A casa é minha.
+        </aside>
+
+        <h3>Uso de "dele" e "dela"</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o uso de dele e dela">
+          Forma mais comum na língua falada para evitar confusão com "seu" e "sua".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos do uso de dele e dela">
+          O livro é dele.<br>
+          A irmã dela chega amanhã.
+        </aside>
+      </section>
+
+      <section id="verbos-ser-estar-ter" aria-labelledby="verbos-title" data-keywords="ser estar ter verbos irregulares conjugação presente indicativo origem profissão posse">
+        <h2 id="verbos-title">8. Verbos ser, estar e ter</h2>
+        <p>Os verbos ser, estar e ter são fundamentais em português.</p>
+
+        <h3>Verbo ser</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ser">
+          Expressa características permanentes e usa-se "ser de" com as contracções do, da, dos, das para indicar origem ou pertença.
+        </aside>
+        <ul>
+          <li>Origem</li>
+          <li>Pertença</li>
+          <li>Material</li>
+          <li>Profissão</li>
+          <li>Estado civil</li>
+        </ul>
+        <aside class="callout example" role="note" aria-label="Exemplos com ser">
+          Sou de Portugal.<br>
+          O carro é da Susana.<br>
+          O copo é de vidro.<br>
+          Ela é médica.<br>
+          Eu sou casado.
+        </aside>
+
+        <h3>Verbo estar</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo estar">
+          Expressa características temporárias e usa-se "estar com" para sensações físicas ou emoções.
+        </aside>
+        <ul>
+          <li>Estado passageiro</li>
+          <li>Localização</li>
+          <li>Sensações e condições físicas</li>
+        </ul>
+        <aside class="callout example" role="note" aria-label="Exemplos com estar">
+          Eu estou doente.<br>
+          Eles estão no supermercado.<br>
+          Está calor hoje.<br>
+          Estou com frio.<br>
+          Nós estamos com medo.
+        </aside>
+
+        <h3>Verbo ter</h3>
+        <aside class="callout grammar" role="note" aria-label="Nota sobre o verbo ter">
+          Indica posse ou idade e usa-se "ter de" ou "ter que" para obrigação.
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com ter">
+          Tenho 28 anos.<br>
+          Ela tem um carro.<br>
+          Nós temos fome.<br>
+          Tenho que estudar.<br>
+          Eles têm de comprar comida.
+        </aside>
+
+        <h3 id="conjugacao-title">Conjugação no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="conjugacao-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">SER</th>
+                <th scope="col">ESTAR</th>
+                <th scope="col">TER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>sou</td><td>estou</td><td>tenho</td></tr>
+              <tr><td>Tu</td><td>és</td><td>estás</td><td>tens</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>é</td><td>está</td><td>tem</td></tr>
+              <tr><td>Nós</td><td>somos</td><td>estamos</td><td>temos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>são</td><td>estão</td><td>têm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="estar-andar" aria-labelledby="estar-andar-title" data-keywords="estar andar gerúndio progressivo contínuo ação habitual recente infinitivo">
+        <h2 id="estar-andar-title">9. Uso de "estar" e "andar"</h2>
+        <p>Os verbos "estar" e "andar" podem ter significados diferentes dependendo do contexto.</p>
+
+        <h3>Diferença entre estar e andar</h3>
+        <aside class="callout grammar" role="note" aria-label="Diferença entre estar e andar">
+          Refere-se ao momento presente e exato com "estar" e a uma situação recente, contínua ou habitual com "andar".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos práticos">
+          Estou bem — agora.<br>
+          Ando bem — ultimamente.
+        </aside>
+
+        <h3>Construções "estar a" e "andar a"</h3>
+        <aside class="callout grammar" role="note" aria-label="Estar a vs Andar a">
+          Indica uma ação em curso com "estar a + infinitivo" e uma ação repetida, prolongada ou habitual nos últimos tempos com "andar a + infinitivo".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com estar a e andar a">
+          Eu estou a estudar português — neste momento.<br>
+          Eu ando a estudar português — nestas últimas semanas/meses.
+        </aside>
+
+        <h3>"Ir + gerúndio" (ação progressiva)</h3>
+        <aside class="callout grammar" role="note" aria-label="Ação progressiva com ir e gerúndio">
+          Indica uma ação que se desenvolve gradualmente (pouco a pouco) com "ir + gerúndio".
+        </aside>
+        <aside class="callout example" role="note" aria-label="Exemplos com ir e gerúndio">
+          A professora explica e os alunos vão percebendo.<br>
+          O meu nível de português vai melhorando todos os dias.
+        </aside>
+      </section>
+
+      <section id="verbos-regulares" aria-labelledby="verbos-regulares-title" data-keywords="verbos regulares AR ER IR conjugação presente indicativo falar comer abrir terminações">
+        <h2 id="verbos-regulares-title">10. Verbos Regulares</h2>
+        <p>Os verbos regulares em português dividem-se em três grupos, que são AR, ER e IR.</p>
+
+        <h3 id="verbos-ar-title">Verbos em AR no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-ar-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Falar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>falo</td></tr>
+              <tr><td>Tu</td><td>as</td><td>falas</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>a</td><td>fala</td></tr>
+              <tr><td>Nós</td><td>amos</td><td>falamos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>am</td><td>falam</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu falo português.<br>
+          Tu falas muito rápido.
+        </aside>
+
+        <h3 id="verbos-er-title">Verbos em ER no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-er-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Comer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>como</td></tr>
+              <tr><td>Tu</td><td>es</td><td>comes</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>e</td><td>come</td></tr>
+              <tr><td>Nós</td><td>emos</td><td>comemos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>em</td><td>comem</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu como pão.<br>
+          Eles comem ao meio-dia.
+        </aside>
+
+        <h3 id="verbos-ir-title">Verbos em IR no presente do indicativo</h3>
+        <div class="table-container" aria-labelledby="verbos-ir-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Terminação</th>
+                <th scope="col">Abrir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Eu</td><td>o</td><td>abro</td></tr>
+              <tr><td>Tu</td><td>es</td><td>abres</td></tr>
+              <tr><td>Ele / Ela / Você</td><td>e</td><td>abre</td></tr>
+              <tr><td>Nós</td><td>imos</td><td>abrimos</td></tr>
+              <tr><td>Eles / Elas / Vocês</td><td>em</td><td>abrem</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note">
+          Eu abro a porta.<br>
+          Nós abrimos a loja.
+        </aside>
+      </section>
+
+      <section id="contracoes-preposicoes" aria-labelledby="contracoes-title" data-keywords="contrações preposições artigos pronomes de em a por do da no na ao à pelo pela">
+        <h2 id="contracoes-title">11. Contrações de Preposições</h2>
+        <p>Algumas preposições contraem-se com artigos e pronomes em português.</p>
+
+        <h3 id="contracoes-artigos-title">Contrações de preposições com artigos</h3>
+        <div class="table-container" aria-labelledby="contracoes-artigos-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ o</th>
+                <th scope="col">+ a</th>
+                <th scope="col">+ os</th>
+                <th scope="col">+ as</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>do</td><td>da</td><td>dos</td><td>das</td></tr>
+              <tr><td>em</td><td>no</td><td>na</td><td>nos</td><td>nas</td></tr>
+              <tr><td>a</td><td>ao</td><td>à</td><td>aos</td><td>às</td></tr>
+              <tr><td>por</td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos de contrações">
+          Eu sou do Brasil.<br>
+          Nós estamos na escola.<br>
+          Cheguei às oito horas.<br>
+          Caminhamos pelo parque.
+        </aside>
+
+        <h3 id="contracoes-pronomes-title">Contrações de preposições com pronomes</h3>
+        <aside class="callout grammar" role="note">
+          Combinações como "a ele" e "por ele" não sofrem alteração na escrita.
+        </aside>
+        <div class="table-container" aria-labelledby="contracoes-pronomes-title">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ ele</th>
+                <th scope="col">+ ela</th>
+                <th scope="col">+ eles</th>
+                <th scope="col">+ elas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>dele</td><td>dela</td><td>deles</td><td>delas</td></tr>
+              <tr><td>em</td><td>nele</td><td>nela</td><td>neles</td><td>nelas</td></tr>
+              <tr><td>a</td><td>a ele</td><td>a ela</td><td>a eles</td><td>a elas</td></tr>
+              <tr><td>por</td><td>por ele</td><td>por ela</td><td>por eles</td><td>por elas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example" role="note" aria-label="Exemplos com pronomes">
+          O livro é dela.<br>
+          Eu confio nele.<br>
+          O professor falou a eles.<br>
+          O trabalho foi feito por elas.
+        </aside>
+      </section>
+
+      <section id="demonstrativos" aria-labelledby="demonstrativos-title" data-keywords="demonstrativos este esse aquele esta essa aquela isto isso aquilo proximidade distância">
+        <h2 id="demonstrativos-title">12. Demonstrativos</h2>
+        <p>Os demonstrativos indicam a posição de algo em relação ao falante e ao ouvinte.</p>
+
+        <h3>Proximidade</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de proximidade">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>este / esta</td><td>estes / estas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Distância média</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de distância média">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>esse / essa</td><td>esses / essas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Distância</h3>
+        <div class="table-container">
+          <table aria-label="Demonstrativos de distância">
+            <thead>
+              <tr>
+                <th scope="col">Singular</th>
+                <th scope="col">Plural</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>aquele / aquela</td><td>aqueles / aquelas</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="callout example">
+          Eu bebo esta cerveja.<br>
+          Esse livro é interessante.<br>
+          Preferes esta mesa ou aquela?
+        </aside>
+
+        <h3>Formas invariáveis</h3>
+        <aside class="callout grammar">
+          "Isto", "isso" e "aquilo" são usados para coisas abstratas ou desconhecidas.
+        </aside>
+        <aside class="callout example">
+          O que é isto?<br>
+          O que é isso?<br>
+          O que é aquilo?
+        </aside>
+      </section>
+
+      <section id="contracoes-avancadas" aria-labelledby="contracoes-avancadas-title" data-keywords="contrações avançadas artigos indefinidos demonstrativos variáveis invariáveis dum numa deste nesse daquilo">
+        <h2 id="contracoes-avancadas-title">13. Contrações Avançadas</h2>
+        <p>As contrações também ocorrem com artigos indefinidos e demonstrativos.</p>
+
+        <h3>Com artigos indefinidos</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com artigos indefinidos">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ um</th>
+                <th scope="col">+ uma</th>
+                <th scope="col">+ uns</th>
+                <th scope="col">+ umas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>dum</td><td>duma</td><td>duns</td><td>dumas</td></tr>
+              <tr><td>em</td><td>num</td><td>numa</td><td>nuns</td><td>numas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Com demonstrativos variáveis</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com demonstrativos variáveis">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ este</th>
+                <th scope="col">+ esse</th>
+                <th scope="col">+ aquele</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>deste</td><td>desse</td><td>daquele</td></tr>
+              <tr><td>em</td><td>neste</td><td>nesse</td><td>naquele</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Com demonstrativos invariáveis</h3>
+        <div class="table-container">
+          <table aria-label="Contrações com demonstrativos invariáveis">
+            <thead>
+              <tr>
+                <th scope="col">Preposição</th>
+                <th scope="col">+ isto</th>
+                <th scope="col">+ isso</th>
+                <th scope="col">+ aquilo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>de</td><td>disto</td><td>disso</td><td>daquilo</td></tr>
+              <tr><td>em</td><td>nisto</td><td>nisso</td><td>naquilo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- .app-container -->
+
+  <!-- Bouton Retour en haut -->
+  <button id="back-to-top" aria-label="Voltar ao início da página" title="Voltar ao início">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       JAVASCRIPT — Vanilla JS organisé en modules fonctionnels
+  ═══════════════════════════════════════════════════════════════ -->
+  <script>
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    /* ═══════════════════════════════════════════════════════════════
+       0. CACHE DOM — Tous les éléments fréquemment utilisés
+          mis en cache une seule fois à l'initialisation
+    ═══════════════════════════════════════════════════════════════ */
+    const DOM = {
+      sections:       Array.from(document.querySelectorAll('main > section')),
+      navMenu:        document.getElementById('nav-menu'),
+      searchInput:    document.getElementById('search-input'),
+      searchClear:    document.getElementById('search-clear'),
+      searchCount:    document.getElementById('search-count'),
+      menuToggle:     document.getElementById('menu-toggle'),
+      sidebar:        document.getElementById('sidebar'),
+      overlay:        document.getElementById('sidebar-overlay'),
+      progressBar:    document.getElementById('scroll-progress'),
+      backToTop:      document.getElementById('back-to-top'),
+      noResults:      document.getElementById('no-results'),
+      noResultsQuery: document.getElementById('no-results-query'),
+      body:           document.body,
+    };
+
+    /* ═══════════════════════════════════════════════════════════════
+       1. NAVIGATION — Génération dynamique + numéros
+    ═══════════════════════════════════════════════════════════════ */
+    const navLinks = []; // Cache des liens de navigation
+
+    DOM.sections.forEach(sec => {
+      const h2 = sec.querySelector('h2');
+      if (!h2) return;
+
+      // Extraire le numéro de section depuis le titre (ex: "1. Alfabeto")
+      const titleText = h2.textContent.trim();
+      const numMatch  = titleText.match(/^(\d+)\./);
+      const num       = numMatch ? numMatch[1] : '';
+      const label     = numMatch ? titleText.replace(/^\d+\.\s*/, '') : titleText;
+
+      const li = document.createElement('li');
+      const a  = document.createElement('a');
+      a.href      = '#' + sec.id;
+      a.className = 'nav-link';
+      a.setAttribute('role', 'listitem');
+
+      // Numéro stylisé + texte
+      if (num) {
+        const numSpan    = document.createElement('span');
+        numSpan.className = 'nav-num';
+        numSpan.textContent = num;
+        numSpan.setAttribute('aria-hidden', 'true');
+        a.appendChild(numSpan);
+      }
+
+      const textNode = document.createTextNode(label);
+      a.appendChild(textNode);
+
+      li.appendChild(a);
+      DOM.navMenu.appendChild(li);
+      navLinks.push(a); // Mise en cache
+    });
+
+    /* ═══════════════════════════════════════════════════════════════
+       2. SCROLLSPY — IntersectionObserver optimisé
+          rootMargin calibré pour une détection précise
+    ═══════════════════════════════════════════════════════════════ */
+    const scrollSpyObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        // Retirer active de tous, l'ajouter au lien correspondant
+        navLinks.forEach(l => l.classList.remove('active'));
+        const activeLink = DOM.navMenu.querySelector(`a[href="#${entry.target.id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+          // Scroll automatique dans la nav pour garder le lien visible
+          activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '-15% 0px -75% 0px',
+      threshold: 0
+    });
+
+    DOM.sections.forEach(sec => scrollSpyObserver.observe(sec));
+
+    /* ═══════════════════════════════════════════════════════════════
+       3. FADE-IN DES SECTIONS — Animation à l'apparition
+          Observer séparé (ne pas mélanger avec scrollspy)
+    ═══════════════════════════════════════════════════════════════ */
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Délai léger pour un effet cascade
+          entry.target.style.transitionDelay = '0.05s';
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target); // Once is enough
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -5% 0px',
+      threshold: 0.05
+    });
+
+    DOM.sections.forEach(sec => fadeObserver.observe(sec));
+
+    /* ═══════════════════════════════════════════════════════════════
+       4. RECHERCHE — Basée sur titres (h2/h3) + data-keywords
+          avec highlight visuel des termes trouvés
+    ═══════════════════════════════════════════════════════════════ */
+
+    /**
+     * Prépare l'index de recherche depuis le DOM (une seule fois)
+     * Chaque entrée contient : l'élément section, les champs de recherche,
+     * l'élément li de navigation, les noeuds texte originaux pour restauration
+     */
+    const buildSearchIndex = () => {
+      return DOM.sections.map(sec => {
+        // Titres h2 et h3
+        const h2Text = (sec.querySelector('h2')?.textContent || '').toLowerCase();
+        const h3Texts = Array.from(sec.querySelectorAll('h3'))
+          .map(h => h.textContent.toLowerCase())
+          .join(' ');
+        // Mots-clés data-keywords
+        const keywords = (sec.dataset.keywords || '').toLowerCase();
+
+        const navLi = DOM.navMenu.querySelector(`a[href="#${sec.id}"]`)?.parentElement;
+
+        return {
+          section: sec,
+          navLi,
+          searchText: `${h2Text} ${h3Text} ${keywords}`.replace(/\s+/g, ' '),
+        };
+      });
+
+      function h3Text() { return ''; } // Déclaré plus haut dans la map
+    };
+
+    // Index construit proprement
+    const searchIndex = DOM.sections.map(sec => {
+      const h2Text   = (sec.querySelector('h2')?.textContent || '').toLowerCase();
+      const h3Texts  = Array.from(sec.querySelectorAll('h3'))
+                         .map(h => h.textContent.toLowerCase())
+                         .join(' ');
+      const keywords = (sec.dataset.keywords || '').toLowerCase();
+      const navLi    = DOM.navMenu.querySelector(`a[href="#${sec.id}"]`)?.parentElement;
+
+      return {
+        section: sec,
+        navLi,
+        searchText: `${h2Text} ${h3Texts} ${keywords}`,
+      };
+    });
+
+    /**
+     * Highlight : entoure les occurrences d'un terme dans les titres
+     * avec une balise <mark>. Opère directement sur les noeuds texte
+     * pour éviter de casser le HTML existant.
+     */
+    const highlightInElement = (el, query) => {
+      if (!query) return;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const nodesToProcess = [];
+      let node;
+      while ((node = walker.nextNode())) {
+        if (node.nodeValue.toLowerCase().includes(query)) {
+          nodesToProcess.push(node);
+        }
+      }
+      nodesToProcess.forEach(textNode => {
+        const parent = textNode.parentNode;
+        // Ne pas highlighter à l'intérieur d'un <mark> existant
+        if (parent.nodeName === 'MARK') return;
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(${escapedQuery})`, 'gi');
+        const html  = textNode.nodeValue.replace(regex, '<mark class="search-highlight">$1</mark>');
+        const frag  = document.createRange().createContextualFragment(html);
+        parent.replaceChild(frag, textNode);
+      });
+    };
+
+    /**
+     * Supprime tous les highlights (restaure le texte original)
+     * en remplaçant les <mark> par leur contenu texte
+     */
+    const removeHighlights = () => {
+      document.querySelectorAll('mark.search-highlight').forEach(mark => {
+        const parent = mark.parentNode;
+        parent.replaceChild(document.createTextNode(mark.textContent), mark);
+        parent.normalize(); // Fusionne les noeuds texte adjacents
+      });
+    };
+
+    // Listener sur l'input avec debounce léger (60ms)
+    let searchTimer = null;
+
+    DOM.searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => performSearch(), 60);
+    });
+
+    const performSearch = () => {
+      const raw   = DOM.searchInput.value;
+      const query = raw.trim().toLowerCase();
+
+      // Afficher/cacher le bouton clear
+      DOM.searchClear.classList.toggle('visible', raw.length > 0);
+
+      // Supprimer les anciens highlights
+      removeHighlights();
+
+      // Réinitialiser si vide
+      if (!query) {
+        searchIndex.forEach(({ section, navLi }) => {
+          section.classList.remove('hidden-by-search', 'search-match');
+          section.style.transitionDelay = '';
+          if (navLi) navLi.classList.remove('nav-hidden');
+        });
+        DOM.searchCount.textContent = '';
+        DOM.noResults.classList.remove('visible');
+        return;
+      }
+
+      let matchCount = 0;
+
+      searchIndex.forEach(({ section, navLi, searchText }) => {
+        const matches = searchText.includes(query);
+
+        if (matches) {
+          section.classList.remove('hidden-by-search');
+          section.classList.add('search-match');
+          if (navLi) navLi.classList.remove('nav-hidden');
+          matchCount++;
+
+          // Highlight dans les titres de la section
+          const titlesToHighlight = [
+            section.querySelector('h2'),
+            ...Array.from(section.querySelectorAll('h3'))
+          ].filter(Boolean);
+
+          titlesToHighlight.forEach(titleEl => highlightInElement(titleEl, query));
+
+        } else {
+          section.classList.add('hidden-by-search');
+          section.classList.remove('search-match');
+          if (navLi) navLi.classList.add('nav-hidden');
+        }
+      });
+
+      // Feedback: compteur de résultats
+      if (matchCount > 0) {
+        DOM.searchCount.textContent = `${matchCount} resultado${matchCount > 1 ? 's' : ''} encontrado${matchCount > 1 ? 's' : ''}`;
+        DOM.noResults.classList.remove('visible');
+      } else {
+        DOM.searchCount.textContent = '';
+        DOM.noResultsQuery.textContent = `"${raw}"`;
+        DOM.noResults.classList.add('visible');
+      }
+    };
+
+    // Bouton clear
+    DOM.searchClear.addEventListener('click', () => {
+      DOM.searchInput.value = '';
+      DOM.searchInput.focus();
+      performSearch();
+    });
+
+    /* ═══════════════════════════════════════════════════════════════
+       5. MENU MOBILE — Overlay + scroll lock + animation fluide
+    ═══════════════════════════════════════════════════════════════ */
+    const openMenu = () => {
+      DOM.sidebar.classList.add('open');
+      DOM.overlay.classList.add('visible');
+      DOM.body.classList.add('menu-open');
+      DOM.menuToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+      DOM.sidebar.classList.remove('open');
+      DOM.overlay.classList.remove('visible');
+      DOM.body.classList.remove('menu-open');
+      DOM.menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    DOM.menuToggle.addEventListener('click', () => {
+      const isOpen = DOM.sidebar.classList.contains('open');
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Fermer en cliquant sur l'overlay
+    DOM.overlay.addEventListener('click', closeMenu);
+
+    // Fermer en cliquant sur un lien de navigation (mobile)
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && DOM.sidebar.classList.contains('open')) {
+        closeMenu();
+        DOM.menuToggle.focus(); // Retour du focus
+      }
+    });
+
+    /* ═══════════════════════════════════════════════════════════════
+       6. SCROLL EVENTS — Progress bar + bouton retour en haut
+          Optimisé avec requestAnimationFrame pour éviter les reflows
+    ═══════════════════════════════════════════════════════════════ */
+    let scrollRAF = null;
+    let lastScrollY = 0;
+
+    const onScroll = () => {
+      lastScrollY = window.scrollY;
+      if (scrollRAF) return; // Éviter les appels multiples
+      scrollRAF = requestAnimationFrame(() => {
+        updateScrollProgress();
+        updateBackToTop();
+        scrollRAF = null;
+      });
+    };
+
+    const updateScrollProgress = () => {
+      const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+      const progress   = docHeight > 0 ? (lastScrollY / docHeight) * 100 : 0;
+      DOM.progressBar.style.width = `${Math.min(progress, 100)}%`;
+      DOM.progressBar.setAttribute('aria-valuenow', Math.round(progress));
+    };
+
+    const updateBackToTop = () => {
+      const shouldShow = lastScrollY > 400;
+      DOM.backToTop.classList.toggle('visible', shouldShow);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Bouton retour en haut
+    DOM.backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ═══════════════════════════════════════════════════════════════
+       7. INITIALISATION — Premier appel pour état correct
+    ═══════════════════════════════════════════════════════════════ */
+    updateScrollProgress();
+    updateBackToTop();
+
+  }); // DOMContentLoaded
+  </script>
+</body>
+</html>
